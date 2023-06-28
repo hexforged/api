@@ -17,5 +17,7 @@ Hexforged is an immersive Action RPG where players assume the role of powerful i
 
 ## Attribution
 
+* [Dotenv](https://www.dotenv.org/)
 * [Express](https://expressjs.com/)
 * [Mongoose](https://mongoosejs.com/)
+* [nodemon](https://nodemon.io/)

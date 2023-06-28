@@ -1,5 +1,5 @@
 /**
- * $KYAULabs: server.js,v 0.1.0 2023/06/27 17:07:41 kyau Exp $
+ * $KYAULabs: status.js,v 0.1.0 2023/06/27 21:37:57 kyau Exp $
  * ▄▄▄▄ ▄▄▄▄ ▄▄▄▄▄▄▄▄▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
  * █ ▄▄ ▄ ▄▄ ▄ ▄▄▄▄ ▄▄ ▄    ▄▄   ▄▄▄▄ ▄▄▄▄  ▄▄▄ ▀
  * █ ██ █ ██ █ ██ █ ██ █    ██   ██ █ ██ █ ██▀  █
@@ -25,11 +25,12 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-const http = require('http');
-const app = require('./app');
+const express = require('express');
+const { getStatus } = require('../controllers/status');
+const router = express.Router();
 
-const port = process.env.port || 4242;
+router
+    .route('/')
+    .get(getStatus);
 
-const server = http.createServer(app);
-
-server.listen(port);
+module.exports = router;

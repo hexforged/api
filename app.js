@@ -28,14 +28,19 @@
 const express = require('express');
 const app = express();
 
-app.disable('x-powered-by');
+// routes
+const characters = require('./routes/characters');
+const status = require('./routes/status');
 
+// x-powered-by middleware
+app.disable('x-powered-by');
 app.use((req, res, next) => {
     res.setHeader('X-Powered-By', 'hexforged-api');
-    res.status(200).json({
-        message: 'It works!'
-    });
     next();
 });
+
+// routes middleware
+app.use('/characters', characters);
+app.use('/status', status);
 
 module.exports = app;

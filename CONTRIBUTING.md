@@ -21,7 +21,7 @@ All code changes happen through pull requests and are the best way to propose ch
 1. Fork the repo and create your own branch off of the `develop` branch.
 2. Name your branch `feat/<name>-<hash>-<desc>` where:
    * `<name>` is your Github username
-   * `<hash>` is equal to `openssl rand hex 2`
+   * `<hash>` is equal to `openssl rand -hex 2`
    * `<desc>` is a short description using hyphen as a separator
 3. If you have added code that should be tested, add tests.
 4. If you have changed APIs, update the documentation.
